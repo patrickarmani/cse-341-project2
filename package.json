@@ -1,0 +1,26 @@
+{
+  "name": "cse-341-project2",
+  "version": "1.0.0",
+  "description": "My second project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickarmani/cse-341-project2.git"
+  },
+  "author": "Patrick Armani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrickarmani/cse-341-project2/issues"
+  },
+  "homepage": "https://github.com/patrickarmani/cse-341-project2#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.3"
+  }
+}
