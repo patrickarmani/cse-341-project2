@@ -1,14 +1,14 @@
 // LOCALHOST
-### Get all users
+### Get all countries
 GET http://localhost:3001/countries
 
 
-### Get user by id
+### Get country by id
 GET http://localhost:3001/countries/65fd6aeaaecfd5f9e9155e25
 
 //LINK RENDER
 ### Get all Countries
-//GET https://project1-7z2r.onrender.com/countries
+GET https://cse-341-project2-c9x7.onrender.com
 
 ### Create Contry information
 POST http://localhost:3001/countries HTTP/1.1

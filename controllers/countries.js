@@ -2,7 +2,7 @@ const mongodb = require('../data/database');
 const ObjectId =  require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-    //#swagger.tags=['Users']
+    //#swagger.tags=['Countries']
     const result = await mongodb.getDatabase().db().collection('countries').find();
     result.toArray().then((countries) => {
         res.setHeader('Content-Type', 'application/json');
@@ -11,8 +11,8 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
-    //#swagger.tags=['Users']
-    const userId = new ObjectId(req.params.id);
+    //#swagger.tags=['Countries']
+    const countryId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db().collection('countries').find({ _id: countryId });
     result.toArray().then((countries) => {
         res.setHeader('Content-Type', 'application/json');
@@ -21,7 +21,7 @@ const getSingle = async (req, res) => {
 };
 
 const createCountry = async (req, res) => {
-    //#swagger.tags=['Users']
+    //#swagger.tags=['Countries']
     const country = {
         govWebSite: req.body.govwebsite,
         countryName: req.body.countryname,
@@ -29,13 +29,13 @@ const createCountry = async (req, res) => {
         territorialExtension: req.body.territorialextension,
         officialCurrency: req.body.officialcurrency,
         flagColors: req.body.flagcolors,
-        yearOfCreation: req.body.yearOfcreation
+        yearOfCreation: req.body.yearofcreation
     };
-    const response = await mongodb.getDatabase().db().collection('countries').insertOne(user);
+    const response = await mongodb.getDatabase().db().collection('countries').insertOne(country);
     if (response.acknowledged) {
         res.status(204).send();
     } else {
-      res.status(500).json(response.error || 'Some error occurred while updating the user.');
+      res.status(500).json(response.error || 'Some error occurred while updating the country.');
     }
 };
 

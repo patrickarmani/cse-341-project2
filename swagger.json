@@ -1,0 +1,176 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Country.Api",
+      "description": "Countries Api",
+      "version": "1.0.0"
+    },
+    "host": "cse-341-project2-c9x7.onrender.com",
+    "basePath": "/",
+    "schemes": [
+      "http","https"
+    ],
+    "paths": {
+      "/": {
+        "get": {
+          "tags": [
+            "Hello world"
+          ],
+          "description": "",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/contries/": {
+        "get": {
+          "tags": [
+            "Countries"
+          ],
+          "description": "",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Countries"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "countryName": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "countryName": {
+                    "example": "any"
+                  },
+                  "OfficialName": {
+                    "example": "any"
+                  },
+                  "govWebSite": {
+                    "example": "any"
+                  },
+                  "flagColors": {
+                    "example": "any"
+                  },
+                  "yearOfCreation": {
+                    "example": "any"
+                  },
+                  "officialCurrency": {
+                    "exemple": "any"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "No Content"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/users/{id}": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "description": "",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Users"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  },
+                  "name": {
+                    "example": "any"
+                  },
+                  "ipaddres": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "No Content"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Users"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "No Content"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      }
+    }
+  }
