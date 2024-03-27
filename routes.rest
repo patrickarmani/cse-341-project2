@@ -15,7 +15,7 @@ POST http://localhost:3001/countries HTTP/1.1
 content-type: application/json
 
 {
-    "govWebSite": "www.brasil.gov.br",
+    "govWebSite": "www.gov.br/pt-br",
     "countryName": "Brazil",
     "OfficialName": "United States of Brazil",
     "territorialExtension": "8,510,000",
