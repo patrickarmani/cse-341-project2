@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-//router.country('/', require('./swagger.json'));
+//router.use('/', require('./swagger.json'));
 router.use('/', require('./swagger'));
 
 router.get('/', (req, res) => { 

@@ -23,13 +23,13 @@ const getSingle = async (req, res) => {
 const createCountry = async (req, res) => {
     //#swagger.tags=['Countries']
     const country = {
-        govWebSite: req.body.govwebsite,
-        countryName: req.body.countryname,
-        OfficialName: req.body.name,
-        territorialExtension: req.body.territorialextension,
-        officialCurrency: req.body.officialcurrency,
-        flagColors: req.body.flagcolors,
-        yearOfCreation: req.body.yearofcreation
+        govWebSite: req.body.govWebsite,
+        countryName: req.body.countryName,
+        OfficialName: req.body.OfficialName,
+        territorialExtension: req.body.territorialExtension,
+        officialCurrency: req.body.officialCurrency,
+        flagColors: req.body.flagColors,
+        yearOfCreation: req.body.yearOfCreation
     };
     const response = await mongodb.getDatabase().db().collection('countries').insertOne(country);
     if (response.acknowledged) {

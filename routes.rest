@@ -4,22 +4,22 @@ GET http://localhost:3001/countries
 
 
 ### Get country by id
-GET http://localhost:3001/countries/65fd6aeaaecfd5f9e9155e25
+GET http://localhost:3001/countries/66024976f552ed13e1eff9d6
 
 //LINK RENDER
 ### Get all Countries
-GET https://cse-341-project2-c9x7.onrender.com
+GET https://cse-341-project2-c9x7.onrender.com/countries
 
 ### Create Contry information
 POST http://localhost:3001/countries HTTP/1.1
 content-type: application/json
 
 {
-    "govWebSite": "req.body.govwebsite",
-    "countryName": "req.body.countryname",
-    "OfficialName": "req.body.name",
-    "territorialExtension": "req.body.territorialextension",
-    "officialCurrency": "req.body.officialcurrency",
-    "flagColors": "req.body.flagcolors",
-    "yearOfCreation": "req.body.yearOfcreation"
+    "govWebSite": "www.brasil.gov.br",
+    "countryName": "Brazil",
+    "OfficialName": "United States of Brazil",
+    "territorialExtension": "8,510,000",
+    "officialCurrency": "Real/R$",
+    "flagColors": "green, yellow, blue and white",
+    "yearOfCreation": "1500 a.c"
 }

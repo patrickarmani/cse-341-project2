@@ -25,7 +25,6 @@ app.use(cors({ origin: '*'}))
 app.use(bodyParser.json());
 app.use('/', require('./routes'));
 
-
 mongodb.initDb((err) => {
   if(err) {
     console.log(err);
