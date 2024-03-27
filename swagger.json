@@ -5,7 +5,7 @@
     "description": "Countries Api",
     "version": "1.0.0"
   },
-  "host": "https://cse-341-project2-c9x7.onrender.com",
+  "host": "cse-341-project2-c9x7.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",

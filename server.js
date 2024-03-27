@@ -19,9 +19,9 @@ app.use((req, res, next) => {
     "POST, GET, PUT, PATCH, OPTIONS, DELETE"
   );
   next();
-})
-app.use(cors({ methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']}))
-app.use(cors({ origin: '*'}))
+});
+app.use(cors({ methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']}));
+app.use(cors({ origin: '*'}));
 app.use(bodyParser.json());
 app.use('/', require('./routes'));
 
