@@ -23,3 +23,23 @@ content-type: application/json
     "flagColors": "green, yellow, blue and white",
     "yearOfCreation": "1500 a.c"
 }
+
+### Put Country
+PUT http://localhost:3001/countries/660450050d345acad75b8dfa HTTP/1.1
+content-type: application/json
+
+{
+    "govWebSite": "https://denmark.dk/",
+    "countryName": "Denmark",
+    "OfficialName": "Kingdom of Denmark",
+    "territorialExtension": "42,921",
+    "officialCurrency": "Danish Crown",
+    "flagColors": "red and white",
+    "yearOfCreation": "x century"
+
+}
+
+
+### DELETE Contact
+DELETE http://localhost:3001/countries/66024c032c891e388cc50263 HTTP/1.1
+

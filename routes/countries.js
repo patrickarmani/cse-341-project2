@@ -9,4 +9,8 @@ router.get('/:id', countriesController.getSingle);
 
 router.post('/', countriesController.createCountry);
 
+router.put('/:id', countriesController.updateCountry);
+
+router.delete('/:id', countriesController.deleteCountry);
+
 module.exports = router;
