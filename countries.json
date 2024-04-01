@@ -1,0 +1,29 @@
+{
+    "country1": {
+      "govWebSite": "https://www.gov.br/pt-br/",
+      "countryName": "Brazil",
+      "OfficialName": "Federative Republic of Brazil",
+      "territorialExtension": "8,510,000 km²",
+      "officialCurrency": "Real",
+      "flagColors":"Green, Yellow, Blue and White",
+      "yearOfCreation":"1,500 b.c."
+    },
+    "country2": {
+      "govWebSite": "https://denmark.dk/",
+      "countryName": "Denmark",
+      "OfficialName": "Kingdom of Denmark",
+      "territorialExtension": "42,921 km²",
+      "officialCurrency": "Danish Crown",
+      "flagColors":"red and white",
+      "yearOfCreation":"x century"
+    },
+    "country3": {
+      "govWebSite": "https://www.governo.it/en  ",
+      "countryName": "Italy",
+      "OfficialName": "Italian Republic",
+      "territorialExtension": "302,073 km²",
+      "officialCurrency": "Euro",
+      "flagColors":"red, green and white",
+      "yearOfCreation":"1861 b.c."
+    }
+  }

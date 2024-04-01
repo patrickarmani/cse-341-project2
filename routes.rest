@@ -4,7 +4,7 @@ GET http://localhost:3001/countries
 
 
 ### Get country by id
-GET http://localhost:3001/countries/66024976f552ed13e1eff9d6
+GET http://localhost:3001/countries/66089ab627ded2a76bd67059
 
 //LINK RENDER
 ### Get all Countries
@@ -15,7 +15,7 @@ POST http://localhost:3001/countries HTTP/1.1
 content-type: application/json
 
 {
-    "govWebSite": "www.gov.br/pt-br",
+    "govWebSite": "https://www.gov.br/pt-br/",
     "countryName": "Brazil",
     "OfficialName": "United States of Brazil",
     "territorialExtension": "8,510,000",
@@ -41,5 +41,5 @@ content-type: application/json
 
 
 ### DELETE Contact
-DELETE http://localhost:3001/countries/66024c032c891e388cc50263 HTTP/1.1
+DELETE http://localhost:3001/countries/66086f6fb6beaf59f36ad011 HTTP/1.1
 
