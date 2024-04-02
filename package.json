@@ -24,7 +24,8 @@
     "express-validator": "^7.0.1",
     "mongodb": "^6.5.0",
     "mongoose": "^8.2.3",
-    "swagger-ui-express": "^5.0.0"
+    "swagger-ui-express": "^5.0.0",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
     "jshint": "^2.13.6",
