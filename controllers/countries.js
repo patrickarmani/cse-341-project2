@@ -78,7 +78,7 @@ const updateCountry = async (req, res) => {
     } else {
         res.status(500).json(response.error || 'Some error occurred while updating the country.');
     }
-    };
+  };
 //delete Contry
 const deleteCountry = async (req, res) => {
     //#swagger.tags=['Countries']

@@ -15,13 +15,13 @@ POST http://localhost:3001/countries HTTP/1.1
 content-type: application/json
 
 {
-    "govWebSite": "https://denmark.dk/",
-    "countryName": "Denmark",
-    "OfficialName": "Kingdom of Denmark",
-    "territorialExtension": "42,921",
-    "officialCurrency": "Danish Crown",
-    "flagColors": "red and white",
-    "yearOfCreation": "x century"
+    "govWebSite": "https://www.governo.it/en  ",
+    "countryName": "Italy",
+    "OfficialName": "Italian Republic",
+    "territorialExtension": "302,073 km²",
+    "fficialCurrency": "Euro",
+    "flagColors":"red, green and white",
+    "yearOfCreation":"1861 b.c."
 }
 
 ### Put Country
