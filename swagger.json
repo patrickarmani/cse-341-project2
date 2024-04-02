@@ -5,11 +5,11 @@
     "description": "Countries Api",
     "version": "1.0.0"
   },
-  "host": "cse-341-project2-c9x7.onrender.com",
+  "host": "localhost:3001",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
@@ -25,11 +25,18 @@
         }
       }
     },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/countries/": {
       "get": {
-        "tags": [
-          "Countries"
-        ],
         "description": "",
         "produces": [
           "application/json"
@@ -37,6 +44,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
@@ -52,7 +62,83 @@
             "schema": {
               "type": "object",
               "properties": {
-                "govWebsite": {
+                "govWebSite": {
+                  "example": "any"
+                },
+                "countryName": {
+                  "example": "any"
+                },
+                "OfficialName": {
+                  "example": "any"
+                },
+                "territorialExtension": {
+                  "example": "any"
+                },
+                "officialCurrency": {
+                  "example": "any"
+                },
+                "flagColors": {
+                  "example": "any"
+                },
+                "yearOfCreation": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/countries/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "govWebSite": {
                   "example": "any"
                 },
                 "countryName": {
@@ -81,21 +167,22 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
-      }
-    },
-    "/countries/{id}": {
-      "get": {
+      },
+      "delete": {
         "tags": [
           "Countries"
         ],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -105,8 +192,14 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

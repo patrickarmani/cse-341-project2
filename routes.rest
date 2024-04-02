@@ -15,13 +15,13 @@ POST http://localhost:3001/countries HTTP/1.1
 content-type: application/json
 
 {
-    "govWebSite": "https://www.gov.br/pt-br/",
-    "countryName": "Brazil",
-    "OfficialName": "United States of Brazil",
-    "territorialExtension": "8,510,000",
-    "officialCurrency": "Real/R$",
-    "flagColors": "green, yellow, blue and white",
-    "yearOfCreation": "1500 a.c"
+    "govWebSite": "https://denmark.dk/",
+    "countryName": "Denmark",
+    "OfficialName": "Kingdom of Denmark",
+    "territorialExtension": "42,921",
+    "officialCurrency": "Danish Crown",
+    "flagColors": "red and white",
+    "yearOfCreation": "x century"
 }
 
 ### Put Country
@@ -41,5 +41,5 @@ content-type: application/json
 
 
 ### DELETE Contact
-DELETE http://localhost:3001/countries/66086f6fb6beaf59f36ad011 HTTP/1.1
+DELETE http://localhost:3001/countries/660431e9773b53eb55705aa8 HTTP/1.1
 
