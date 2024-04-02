@@ -1,4 +1,4 @@
-const Validator = require('validatorjs');
+const Validator = require('validate.js');
 
 const validator = async (body, rules, customMessages, callback) => {
     const validation = new Validator(body, rules, customMessages);
