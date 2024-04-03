@@ -25,5 +25,14 @@
       "officialCurrency": "Euro",
       "flagColors":"red, green and white",
       "yearOfCreation":"1861 b.c."
+    },
+    "country4": {
+      "govWebSite": "https://www.austria.info/",
+      "countryName": "Austria",
+      "OfficialName": "Republic of Austria",
+      "territorialExtension": "83,871 km²",
+      "officialCurrency": "Euro",
+      "flagColors":"red and white",
+      "yearOfCreation":"07/27/1955"
     }
   }
