@@ -66,7 +66,7 @@ passport.deserializeUser((user, done) => {
 app.get("/", (req, res) => {
   res.send(
     req.session.user !== undefined
-      ? `Logged in as ${req.session.user.displayName}`
+      ? `Logged in as ${req.session.user.clientID}`
       : "Logged Out"
   );
 });
@@ -83,15 +83,39 @@ app.get(
   }
 );
 
-process.on('uncaughtException', (err, origin) => {
-  console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
-});
+//process.on('uncaughtException', (err, origin) => {
+  //console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+//});
 
-mongodb.initDb((err) => {
-  if(err) {
-    console.log(err);
-  }
-  else {
-    app.listen(port, () => {console.log(`Database is listening and node Running on port ${port}`)});
-  }
-});
+/****************************
+ * Error handling
+ ****************************/
+app.use((err, req, res, next) => {
+  err.statusCode = err.statusCode || 500;
+  err.message = err.message || "Internal Server Error";
+  res.status(err.statusCode).json({ message: err.message });
+})
+
+//mongodb.initDb((err) => {
+  //if(err) {
+    //console.log(err);
+  //}
+  //else {
+    //app.listen(port, () => {console.log(`Database is listening and node Running on port ${port}`)});
+  //}
+//});
+
+/**************************
+ * Verify database operation
+ **************************/
+dataBase.mongoose.connect(
+  process.env.MONGODB_URI)
+  .then(() => {
+      app.listen(port, () => {
+          console.log(`Connected to database on port: ${port}`);
+      });
+  })
+  .catch((err) => {
+      console.error('Cannot connect to the database', err);
+      process.exit();
+  });
