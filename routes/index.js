@@ -5,6 +5,14 @@ const { saveUser, saveCountry } = require('../middleware/validate');
 const { isAuthenticated } = require('../middleware/authenticate');
 const passport = require('passport');
 
+router.use("/", require("./swagger"));
+
+router.use("/users", require("./countries"));
+//
+
+router.use("/countries", require("./users"));
+
+
 // Root route
 router.get('/', (req, res) => { 
     res.send('Countries of the World');
