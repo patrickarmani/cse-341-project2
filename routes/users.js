@@ -1,17 +1,17 @@
 const router = require("express").Router();
 
-const getCountryInfoController = require("../controllers/country-info");
+const getUserController = require("../controllers/users");
 
 const { isAuthenticated } = require("../middleware/authenticate");
 
-router.get("/", getCountryInfoController.getAllCountryInfo);
+router.get("/", getUserController.getAllUser);
 
-router.get("/:id", getCountryInfoController.getCountryInfo);
+router.get("/:id", getUserController.getUser);
 
-router.post("/", isAuthenticated, getCountryInfoController.createCountryInfo);
+router.post("/", isAuthenticated, getUserController.createUser);
 
-router.put("/:id", isAuthenticated, getCountryInfoController.updateCountryInfo);
+router.put("/:id", isAuthenticated, getUserController.updateUser);
 
-router.delete("/:id", isAuthenticated, getCountryInfoController.deleteCountryInfo);
+router.delete("/:id", isAuthenticated, getUserController.deleteUser);
 
 module.exports = router;

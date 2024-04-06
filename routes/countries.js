@@ -40,17 +40,17 @@ router.get('/logout', function (req, res, next) {
 //user routes
 router.get('/users', userCont.getAll);
 router.get('/users/:id', userCont.getSingle);
-router.post('/users', saveUser, isAuthenticated, userCont.newUser);
+router.post('/users', saveUser, isAuthenticated, userCont.createUser);
 router.put('/users/:id', saveUser, isAuthenticated, userCont.updateUser);
 router.delete('/users/:id', isAuthenticated, userCont.deleteUser);
 
 
-//book routes
-router.get('/books', countryCont.getAll);
-router.get('/books/:id', countryCont.getSingle);
-router.post('/books',  saveCountry, isAuthenticated, countryCont.newBook);
-router.put('/books/:id', saveCountry, isAuthenticated, countryCont.updateCountry);
-router.delete('/books/:id', isAuthenticated, countryCont.deleteCountry);
+//country routes
+router.get('/countries', countryCont.getAll);
+router.get('/countries/:id', countryCont.getSingle);
+router.post('/countries',  saveCountry, isAuthenticated, countryCont.createCountry);
+router.put('/countries/:id', saveCountry, isAuthenticated, countryCont.updateCountry);
+router.delete('/countries/:id', isAuthenticated, countryCont.deleteCountry);
 
 
 module.exports = router;

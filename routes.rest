@@ -1,4 +1,40 @@
 // LOCALHOST
+
+###get all users 
+GET http://localhost:3001/users
+
+###get one user 
+GET http://localhost:3001/users/65eb3b483a7d59cf53ea2002
+
+###login 
+GET http://localhost:3001/login
+
+###logout 
+GET http://localhost:3001/logout
+
+###create new user 
+POST http://localhost:3001/users HTTP/1.1
+
+{ 
+    "firstName": "John", 
+    "lastName": "Denver", 
+    "email": "denver@email.com", 
+    "password": "Dj123456" 
+    
+}
+
+###update user 
+PUT http://localhost:3001/users/65eb3b393a7d59cf53ea11a4 HTTP/1.1
+
+{ 
+    "firstName": "Teresa", 
+    "lastName": "Moon", 
+    "email": "moontt@email.com", 
+    "password": "tm@12345" 
+}
+
+###Delete user 
+DELETE http://localhost:3001/users/65ef66d2d23f8bf0bf1f32e3 HTTP/1.1
 ### Get all countries
 GET http://localhost:3001/countries
 
@@ -41,4 +77,5 @@ content-type: application/json
 
 ### DELETE Contact
 DELETE http://localhost:3001/countries/66044f22140b0d76d96d3a64 HTTP/1.1
+
 
