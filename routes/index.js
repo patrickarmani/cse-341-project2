@@ -1,44 +1,46 @@
 const router = require('express').Router();
-const userCont = require('../controllers/users');
-const countryCont = require('../controllers/countries');
+const usersController = require('../controllers/users');
+const countriesController = require('../controllers/countries');
 const { saveUser, saveCountry } = require('../middleware/validate');
 const { isAuthenticated } = require('../middleware/authenticate');
 const passport = require('passport');
 
 router.use("/", require("./swagger"));
 
-router.use("/users", require("./countries"));
-//
-
 router.use("/countries", require("./users"));
 
+router.use("/users", require("./countries"));
 
 // Root route
-router.get('/', (req, res) => { 
+/*router.get('/', (req, res) => { 
     res.send('Countries of the World');
-});
+});*/
 
 // Login route with GitHub authentication
-router.get('/login', passport.authenticate('github'));
+router.get('/login', passport.authenticate('github'), (req, res) => { } );
 
 // Logout route
-router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
-});
+router.get("/logout", function (req, res, next) {
+    req.logout(function (err) {
+      if (err) {
+        return next(err);
+      }
+      res.redirect("/")
+    });
+  });
 
 // User routes
-router.get('/users', isAuthenticated, userCont.getAll);
-router.get('/users/:id', isAuthenticated, userCont.getSingle);
-router.post('/users', isAuthenticated, saveUser, userCont.createUser);
-router.put('/users/:id', isAuthenticated, saveUser, userCont.updateUser);
-router.delete('/users/:id', isAuthenticated, userCont.deleteUser);
+router.get('/users', isAuthenticated, usersController.getAll);
+router.get('/users/:id', isAuthenticated, usersController.getSingle);
+router.post('/users', isAuthenticated, saveUser, usersController.createUser);
+router.put('/users/:id', isAuthenticated, saveUser, usersController.updateUser);
+router.delete('/users/:id', isAuthenticated, usersController.deleteUser);
 
 // Country routes
-router.get('/countries', isAuthenticated, countryCont.getAll);
-router.get('/countries/:id', isAuthenticated, countryCont.getSingle);
-router.post('/countries', isAuthenticated, saveCountry, countryCont.createCountry);
-router.put('/countries/:id', isAuthenticated, saveCountry, countryCont.updateCountry);
-router.delete('/countries/:id', isAuthenticated, countryCont.deleteCountry);
+router.get('/countries', countriesController.getAll);
+router.get('/countries/:id', countriesController.getSingle);
+router.post('/countries', isAuthenticated, saveCountry, countriesController.createCountry);
+router.put('/countries/:id', isAuthenticated, saveCountry, countriesController.updateCountry);
+router.delete('/countries/:id', isAuthenticated, countriesController.deleteCountry);
 
 module.exports = router;

@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const dbConfig = require('../config/db.config.js');
+const config = require('../config/db.config.js');
 mongoose.Promise = global.Promise;
 
 const dataBase = {};
 dataBase.mongoose = mongoose;
-dataBase.URL = dbConfig.url;
-dataBase.users = require('./users.js')(mongoose);
-dataBase.countries = require('./countries.js')(mongoose);
+dataBase.URL = config.url;
+dataBase.user = require('./users.js')(mongoose);
+dataBase.country = require('./countries.js')(mongoose);
 
 module.exports = dataBase;

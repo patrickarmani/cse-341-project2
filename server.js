@@ -1,16 +1,17 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-//const mongodb = require('./data/database');
 const app = express();
-const cors = require('cors');
+// const mongodb = require('./config/database');
+const bodyParser = require('body-parser');
+const port = process.env.PORT || 3001;
 const passport = require('passport');
 const dataBase = require('./models');
 const session = require('express-session');
+const cors = require('cors');
 const GitHubStrategy = require('passport-github2').Strategy;
 const dotenv = require('dotenv').config;
 
 
-const port = process.env.PORT || 3001;
+//const port = process.env.PORT || 3001;
 //---Middleware--
 app
   .use(bodyParser.json())
@@ -19,8 +20,7 @@ app
       secret: "secret",
       resave: false,
       saveUninitialized: true,
-    })
-  )
+    }))
   // This is the basic express session({..}) initialization.
   .use(passport.initialize())
   // init passport on every route call.
@@ -109,7 +109,7 @@ app.use((err, req, res, next) => {
  * Verify database operation
  **************************/
 dataBase.mongoose.connect(
-  process.env.MONGODB_URI)
+  process.env.MONGODB_URL)
   .then(() => {
       app.listen(port, () => {
           console.log(`Connected to database on port: ${port}`);

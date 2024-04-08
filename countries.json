@@ -34,5 +34,31 @@
       "officialCurrency": "Euro",
       "flagColors":"red and white",
       "yearOfCreation":"07/27/1955"
-    }
+    },
+    "country5": {
+      "govWebSite": "http://www.presidencia.gob.hn/",
+      "countryName": "Honduras",
+      "OfficialName": "Republic of Honduras",
+      "territorialExtension": "112,492 km²",
+      "officialCurrency": "Lempira / HNL",
+      "flagColors":"Blue and white",
+      "yearOfCreation":"07/15/1821"
+    },
+    "country6": {
+      "govWebSite": "https://www.japan.go.jp/",
+      "countryName": "Japan",
+      "OfficialName": "Nippon Koku",
+      "territorialExtension": "377,975.26 km²",
+      "officialCurrency": "Yen",
+      "flagColors":"Red and white",
+      "yearOfCreation":"02/11/660 b.c."
+    },
+    "country7": {
+      "govWebSite": "http://government.ru/en/",
+      "countryName": "Russia",
+      "OfficialName": "Russian Federation",
+      "territorialExtension": "17,098,240 km²",
+      "officialCurrency": "Rublo/RUB",
+      "flagColors":"Red, white and Blue",
+      "yearOfCreation":"12/25/1991"
   }

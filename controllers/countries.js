@@ -95,4 +95,3 @@ module.exports = {
   updateCountry,
   deleteCountry
 };
-

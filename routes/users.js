@@ -4,9 +4,9 @@ const getUserController = require("../controllers/users");
 
 const { isAuthenticated } = require("../middleware/authenticate");
 
-router.get("/", getUserController.getAllUser);
+router.get("/", getUserController.getAll);
 
-router.get("/:id", getUserController.getUser);
+router.get("/:id", getUserController.getSingle);
 
 router.post("/", isAuthenticated, getUserController.createUser);
 
