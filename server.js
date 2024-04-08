@@ -109,7 +109,7 @@ app.use((err, req, res, next) => {
  * Verify database operation
  **************************/
 dataBase.mongoose.connect(
-  process.env.MONGODB_URL)
+  process.env.MONGODB_URI)
   .then(() => {
       app.listen(port, () => {
           console.log(`Connected to database on port: ${port}`);
