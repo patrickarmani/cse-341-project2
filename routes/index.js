@@ -7,14 +7,16 @@ const passport = require('passport');
 
 router.use("/", require("./swagger"));
 
-router.use("/countries", require("./users"));
-
-router.use("/users", require("./countries"));
-
 // Root route
-/*router.get('/', (req, res) => { 
-    res.send('Countries of the World');
-});*/
+router.get('/', (req, res) => { 
+  res.send('Countries of the World');
+});
+
+//router.use("/countries", require("./countries"));
+
+//router.use("/users", require("./users"));
+
+
 
 // Login route with GitHub authentication
 router.get('/login', passport.authenticate('github'), (req, res) => { } );
