@@ -16,10 +16,10 @@ GET http://localhost:3001/logout
 POST http://localhost:3001/users HTTP/1.1
 
 { 
-    "firstName": "John", 
-    "lastName": "Denver", 
-    "email": "denver@email.com", 
-    "password": "Dj123456" 
+    "firstName": "Peter", 
+    "lastName": "Parker", 
+    "email": "parkerp@email.com", 
+    "password": "Pa123456" 
     
 }
 

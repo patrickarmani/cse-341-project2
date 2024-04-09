@@ -5,7 +5,7 @@ const doc = {
         title: 'Countries Api',
         description: 'Countries Api'
     },
-    host: 'localhost: 3001',
+    host: 'localhost:3001',
     schemes: ['https','http']
 };
 const outputFile = 'swagger.json';
