@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-// const mongodb = require('./config/database');
+const mongodb = require('./data/database');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3001;
 const passport = require('passport');
@@ -111,9 +111,16 @@ app.use((err, req, res, next) => {
 dataBase.mongoose.connect(
   process.env.MONGODB_URL)
   .then(() => {
-      app.listen(port, () => {
+    mongodb.initDatabase((err) => {
+      if(err) {
+        console.log(err);
+      }
+      else {
+        app.listen(port, () => {
           console.log(`Connected to database on port: ${port}`);
       });
+      }
+    });
   })
   .catch((err) => {
       console.error('Cannot connect to the database', err);
