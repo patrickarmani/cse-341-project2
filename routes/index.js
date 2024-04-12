@@ -9,7 +9,7 @@ router.use("/", require("./swagger"));
 
 // Root route
 router.get('/', (req, res) => { 
-  res.send('Countries of the World');
+  res.send('Registration of countries around the world and their data!');
 });
 
 //router.use("/countries", require("./countries"));
